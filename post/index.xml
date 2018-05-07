@@ -6,18 +6,22 @@
     <description>Recent content in Posts on MyDev - Andre Marcelo-Tanner</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 01 Feb 2018 00:23:25 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 01 Mar 2018 08:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://mydev.org/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>My First Post</title>
-      <link>https://mydev.org/post/my-first-post/</link>
-      <pubDate>Thu, 01 Feb 2018 00:23:25 +0800</pubDate>
+      <title>Welcome</title>
+      <link>https://mydev.org/post/welcome/</link>
+      <pubDate>Thu, 01 Mar 2018 08:00:00 +0800</pubDate>
       
-      <guid>https://mydev.org/post/my-first-post/</guid>
-      <description>&lt;p&gt;dasjhkdjashkjudhasdas
+      <guid>https://mydev.org/post/welcome/</guid>
+      <description>&lt;p&gt;Welcome to MyDev.ORG!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://media.giphy.com/media/l0MYC0LajbaPoEADu/giphy.gif&#34; alt=&#34;Welcome to my blog&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I made a resolution to start blogging in 2018, 22 years after I started making websites.
 &lt;/p&gt;</description>
     </item>
     
