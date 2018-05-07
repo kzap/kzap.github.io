@@ -3,35 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://mydev.org/posts/my-first-post/</loc>
-    <lastmod>2018-02-01T00:23:25+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://mydev.org/categories/</loc>
-    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://mydev.org/</loc>
-    <lastmod>2018-02-01T00:23:25+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://mydev.org/posts/</loc>
-    <lastmod>2018-02-01T00:23:25+08:00</lastmod>
-    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://mydev.org/tags/</loc>
-    <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
