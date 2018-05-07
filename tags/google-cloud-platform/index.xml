@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>MyDev - Andre Marcelo-Tanner</title>
-    <link>https://mydev.org/</link>
-    <description>Recent content on MyDev - Andre Marcelo-Tanner</description>
+    <title>Google Cloud Platform on MyDev - Andre Marcelo-Tanner</title>
+    <link>https://mydev.org/tags/google-cloud-platform/</link>
+    <description>Recent content in Google Cloud Platform on MyDev - Andre Marcelo-Tanner</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 07 May 2018 21:55:31 +0800</lastBuildDate>
     
-	<atom:link href="https://mydev.org/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mydev.org/tags/google-cloud-platform/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,20 +19,6 @@
       <guid>https://mydev.org/post/mysql-migration-gcp/</guid>
       <description>I have a bunch of blog posts in the unfinished pipeline but I also blog over at the Galleon.PH Engineering Blog and on our internal team blog.
 We recently performed a migration of our 1TB database over to Google Cloud Platform, both to save on costs and to give us more room to grow. It took about a week to work out the kinks and problems but in the end, we ended up saving about 300GB in space after we cleared out some duplicate indexes and re-imported the database.</description>
-    </item>
-    
-    <item>
-      <title>Welcome</title>
-      <link>https://mydev.org/post/welcome/</link>
-      <pubDate>Thu, 01 Mar 2018 08:00:00 +0800</pubDate>
-      
-      <guid>https://mydev.org/post/welcome/</guid>
-      <description>&lt;p&gt;Welcome to MyDev.ORG!&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://media.giphy.com/media/l0MYC0LajbaPoEADu/giphy.gif&#34; alt=&#34;Welcome to my blog&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;I made a resolution to start blogging in 2018, 22 years after I started making websites.
-&lt;/p&gt;</description>
     </item>
     
   </channel>

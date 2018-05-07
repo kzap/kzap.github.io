@@ -12,15 +12,15 @@
 
 
 
-<meta name="twitter:title" content="Welcome"/>
+<meta name="twitter:title" content="Migrating a 1TB Database to Google Cloud Platform"/>
 <meta name="twitter:description" content=""/>
 <meta name="twitter:site" content="@"/>
 
 
 
-  	<meta property="og:title" content="Welcome &middot; MyDev - Andre Marcelo-Tanner" />
+  	<meta property="og:title" content="Migrating a 1TB Database to Google Cloud Platform &middot; MyDev - Andre Marcelo-Tanner" />
   	<meta property="og:site_name" content="MyDev - Andre Marcelo-Tanner" />
-  	<meta property="og:url" content="https://mydev.org/post/welcome/" />
+  	<meta property="og:url" content="https://mydev.org/post/mysql-migration-gcp/" />
 
     
         
@@ -29,19 +29,22 @@
     
     <meta property="og:description" content="" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2018-03-01T08:00:00&#43;08:00" />
+    <meta property="article:published_time" content="2018-05-07T21:55:31&#43;08:00" />
 
+    
+    <meta property="article:tag" content="mysql" />
+    
+    <meta property="article:tag" content="google cloud platform" />
+    
+    <meta property="article:tag" content="mariadb" />
     
     
 
-    <title>Welcome &middot; MyDev - Andre Marcelo-Tanner</title>
+    <title>Migrating a 1TB Database to Google Cloud Platform &middot; MyDev - Andre Marcelo-Tanner</title>
 
     
-    <meta name="description" content="&lt;p&gt;Welcome to MyDev.ORG!&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://media.giphy.com/media/l0MYC0LajbaPoEADu/giphy.gif&#34; alt=&#34;Welcome to my blog&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;I made a resolution to" />
+    <meta name="description" content="I have a bunch of blog posts in the unfinished pipeline but I also blog over at the Galleon.PH Engineering Blog and on our internal team blog.
+We recently perfo" />
     
 
     <meta name="HandheldFriendly" content="True" />
@@ -65,7 +68,7 @@
     
     <meta name="generator" content="Hugo 0.37.1" />
 
-    <link rel="canonical" href="https://mydev.org/post/welcome/" />
+    <link rel="canonical" href="https://mydev.org/post/mysql-migration-gcp/" />
 
     
       
@@ -94,23 +97,23 @@
             
         ]
     },
-    "headline": Welcome,
-    "name": Welcome,
-    "wordCount": 193,
+    "headline": Migrating a 1TB Database to Google Cloud Platform,
+    "name": Migrating a 1TB Database to Google Cloud Platform,
+    "wordCount": 126,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": en
     },
-    "url": https://mydev.org/post/welcome/,
-    "datePublished": 2018-03-01T08:00Z,
-    "dateModified": 2018-03-01T08:00Z,
+    "url": https://mydev.org/post/mysql-migration-gcp/,
+    "datePublished": 2018-05-07T21:55Z,
+    "dateModified": 2018-05-07T21:55Z,
     
-    
+    "keywords": mysql, google cloud platform, mariadb,
     "description": ,
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": https://mydev.org/post/welcome/
+        "@id": https://mydev.org/post/mysql-migration-gcp/
     }
 }
     </script>
@@ -167,34 +170,32 @@
   <article class="post post">
 
     <header class="post-header">
-        <h1 class="post-title">Welcome</h1>
+        <h1 class="post-title">Migrating a 1TB Database to Google Cloud Platform</h1>
         <small></small>
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2018-03-01T08:00:00&#43;08:00">
-            Mar 1, 2018
+          <time class="post-date" datetime="2018-05-07T21:55:31&#43;08:00">
+            May 7, 2018
           </time>
         
+         
+          <span class="post-tag small"><a href="https://mydev.org//tags/mysql/">#mysql</a></span>
+         
+          <span class="post-tag small"><a href="https://mydev.org//tags/google-cloud-platform/">#google cloud platform</a></span>
+         
+          <span class="post-tag small"><a href="https://mydev.org//tags/mariadb/">#mariadb</a></span>
          
         </section>
     </header>
 
     <section class="post-content">
-      <p>Welcome to MyDev.ORG!</p>
+      <p>I have a bunch of blog posts in the unfinished pipeline but I also blog over at the <a href="https://engineering.galleon.ph/">Galleon.PH Engineering Blog</a> and on our internal team blog.</p>
 
-<p><img src="https://media.giphy.com/media/l0MYC0LajbaPoEADu/giphy.gif" alt="Welcome to my blog" /></p>
+<p>We recently performed a migration of our 1TB database over to Google Cloud Platform, both to save on costs and to give us more room to grow. It took about a week to work out the kinks and problems but in the end, we ended up saving about 300GB in space after we cleared out some duplicate indexes and re-imported the database. It really works wonders to start a fresh database import.</p>
 
-<p>I made a resolution to start blogging in 2018, 22 years after I started making websites.
-</p>
+<p>If you&rsquo;re interested to see how we did it, including with replication, check out the blog post: <a href="https://engineering.galleon.ph/posts/mysql-replication-gcp/">Setting up MySQL / MariaDB replication on Google Cloud Platform</a>.</p>
 
-<p>My name is <a href="https://www.linkedin.com/in/andremarcelotanner/">Andre Marcelo-Tanner</a> and I have been a professional web developer for a quite some time. Having worked as a full-stack engineer in e-commerce, virtual goods, daily deals, content networks, startups and literally almost any kind of website out there. Most recently I headed the technology for Examine.com, the largest source of unbiased supplement and nutrition information on the Internet.</p>
-
-<p>Now I run an awesome and excellent fully remote team at <a href="https://www.galleon.ph/">Galleon.PH</a> where we are bringing E-Commerce in the Philippines to new levels with a modern technology stack using Docker from development to production and with Kubernetes at the forefront.</p>
-
-<p>Personally, I am interested in technology and processes which enable teams to deliver products at high velocity by automating all the crud. My day to day consists of making sure people can just do what they love to do at work.</p>
-
-<p>Thank you for visiting my blog and hope you can learn something from it. If you have some comments or something to share, hit me up on Twitter <a href="https://www.twitter.com/kzapkzap">@kzapkzap</a> or <a href="https://www.linkedin.com/in/andremarcelotanner/">LinkedIn</a></p>
     </section>
 
 
@@ -228,19 +229,19 @@
     
 <section class="share">
   <h4>Share this post</h4>
-  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Welcome&nbsp;-&nbsp;MyDev%20-%20Andre%20Marcelo-Tanner&amp;url=https%3a%2f%2fmydev.org%2fpost%2fwelcome%2f"
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Migrating%20a%201TB%20Database%20to%20Google%20Cloud%20Platform&nbsp;-&nbsp;MyDev%20-%20Andre%20Marcelo-Tanner&amp;url=https%3a%2f%2fmydev.org%2fpost%2fmysql-migration-gcp%2f"
       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
       <span class="hidden">Twitter</span>
   </a>
-  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fmydev.org%2fpost%2fwelcome%2f"
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fmydev.org%2fpost%2fmysql-migration-gcp%2f"
       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
       <span class="hidden">Facebook</span>
   </a>
-  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fmydev.org%2fpost%2fwelcome%2f&amp;description=Welcome"
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fmydev.org%2fpost%2fmysql-migration-gcp%2f&amp;description=Migrating%20a%201TB%20Database%20to%20Google%20Cloud%20Platform"
       onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
       <span class="hidden">Pinterest</span>
   </a>
-  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2fmydev.org%2fpost%2fwelcome%2f"
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2fmydev.org%2fpost%2fmysql-migration-gcp%2f"
      onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
       <span class="hidden">Google+</span>
   </a>
@@ -264,13 +265,12 @@
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/post/mysql-migration-gcp/">
+  
+      <a class="read-next-story prev" style="no-cover" href="/post/welcome/">
           <section class="post">
-              <h2>Migrating a 1TB Database to Google Cloud Platform</h2>
-              
+              <h2>Welcome</h2>
           </section>
       </a>
-  
   
 </aside>
 

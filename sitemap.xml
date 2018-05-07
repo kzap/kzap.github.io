@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://mydev.org/post/mysql-migration-gcp/</loc>
+    <lastmod>2018-05-07T21:55:31+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mydev.org/post/welcome/</loc>
     <lastmod>2018-03-01T08:00:00+08:00</lastmod>
   </url>
@@ -13,19 +18,38 @@
   </url>
   
   <url>
+    <loc>https://mydev.org/tags/google-cloud-platform/</loc>
+    <lastmod>2018-05-07T21:55:31+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mydev.org/tags/mariadb/</loc>
+    <lastmod>2018-05-07T21:55:31+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://mydev.org/</loc>
-    <lastmod>2018-03-01T08:00:00+08:00</lastmod>
+    <lastmod>2018-05-07T21:55:31+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mydev.org/tags/mysql/</loc>
+    <lastmod>2018-05-07T21:55:31+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://mydev.org/post/</loc>
-    <lastmod>2018-03-01T08:00:00+08:00</lastmod>
+    <lastmod>2018-05-07T21:55:31+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://mydev.org/tags/</loc>
+    <lastmod>2018-05-07T21:55:31+08:00</lastmod>
     <priority>0</priority>
   </url>
   
