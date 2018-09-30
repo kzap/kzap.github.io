@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jenkins on MyDev - Andre Marcelo-Tanner</title>
+    <link>https://mydev.org/tags/jenkins/</link>
+    <description>Recent content in Jenkins on MyDev - Andre Marcelo-Tanner</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 01 Aug 2018 21:55:31 +0800</lastBuildDate>
+    
+	<atom:link href="https://mydev.org/tags/jenkins/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Increasing developer productivity with simple Jenkins Pipelines</title>
+      <link>https://mydev.org/post/jenkins-pipelines/</link>
+      <pubDate>Wed, 01 Aug 2018 21:55:31 +0800</pubDate>
+      
+      <guid>https://mydev.org/post/jenkins-pipelines/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://mydev.org/images/jenkins-pipelines.png&#34; alt=&#34;Jenkins Pipelines&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;At Galleon.PH I made sure to document all our development processes so anyone on our remote team can learn how we do our work, but not only that, it makes for consistent repeatable processes and lowers cognitive load when you can offload a process into a document. We found huge gains by automating a couple of regular processes using Jenkins Pipelines.
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
