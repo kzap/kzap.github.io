@@ -12,15 +12,15 @@
 
 
 
-<meta name="twitter:title" content="Migrating a 1TB Database to Google Cloud Platform"/>
+<meta name="twitter:title" content="Setting up and running Docker Swarm on Google Cloud Platform"/>
 <meta name="twitter:description" content=""/>
 <meta name="twitter:site" content="@"/>
 
 
 
-  	<meta property="og:title" content="Migrating a 1TB Database to Google Cloud Platform &middot; MyDev - Andre Marcelo-Tanner" />
+  	<meta property="og:title" content="Setting up and running Docker Swarm on Google Cloud Platform &middot; MyDev - Andre Marcelo-Tanner" />
   	<meta property="og:site_name" content="MyDev - Andre Marcelo-Tanner" />
-  	<meta property="og:url" content="https://mydev.org/post/mysql-migration-gcp/" />
+  	<meta property="og:url" content="https://mydev.org/post/docker-swarm-gcp/" />
 
     
         
@@ -29,21 +29,23 @@
     
     <meta property="og:description" content="" />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2018-05-07T21:55:31&#43;08:00" />
+    <meta property="article:published_time" content="2018-06-01T21:55:31&#43;08:00" />
 
     
-    <meta property="article:tag" content="mysql" />
+    <meta property="article:tag" content="docker swarm" />
     
     <meta property="article:tag" content="google cloud platform" />
     
-    <meta property="article:tag" content="mariadb" />
+    <meta property="article:tag" content="docker" />
     
     
 
-    <title>Migrating a 1TB Database to Google Cloud Platform &middot; MyDev - Andre Marcelo-Tanner</title>
+    <title>Setting up and running Docker Swarm on Google Cloud Platform &middot; MyDev - Andre Marcelo-Tanner</title>
 
     
-    <meta name="description" content="&lt;p&gt;I have a bunch of blog posts in the unfinished pipeline but I also blog over at the &lt;a href=&#34;https://engineering.galleon.ph/&#34;&gt;Galleon.PH Engineering Blog&lt;/a&gt;" />
+    <meta name="description" content="&lt;p&gt;&lt;img src=&#34;/images/docker-swarm-logo.png&#34; alt=&#34;Docker Swarm&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Posted this a month back on the Galleon Engineering blog. This is a guide on how to ge" />
     
 
     <meta name="HandheldFriendly" content="True" />
@@ -67,7 +69,7 @@
     
     <meta name="generator" content="Hugo 0.37.1" />
 
-    <link rel="canonical" href="https://mydev.org/post/mysql-migration-gcp/" />
+    <link rel="canonical" href="https://mydev.org/post/docker-swarm-gcp/" />
 
     
       
@@ -96,23 +98,23 @@
             
         ]
     },
-    "headline": Migrating a 1TB Database to Google Cloud Platform,
-    "name": Migrating a 1TB Database to Google Cloud Platform,
-    "wordCount": 126,
+    "headline": Setting up and running Docker Swarm on Google Cloud Platform,
+    "name": Setting up and running Docker Swarm on Google Cloud Platform,
+    "wordCount": 90,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": en
     },
-    "url": https://mydev.org/post/mysql-migration-gcp/,
-    "datePublished": 2018-05-07T21:55Z,
-    "dateModified": 2018-05-07T21:55Z,
+    "url": https://mydev.org/post/docker-swarm-gcp/,
+    "datePublished": 2018-06-01T21:55Z,
+    "dateModified": 2018-06-01T21:55Z,
     
-    "keywords": mysql, google cloud platform, mariadb,
+    "keywords": docker swarm, google cloud platform, docker,
     "description": ,
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": https://mydev.org/post/mysql-migration-gcp/
+        "@id": https://mydev.org/post/docker-swarm-gcp/
     }
 }
     </script>
@@ -169,34 +171,36 @@
   <article class="post post">
 
     <header class="post-header">
-        <h1 class="post-title">Migrating a 1TB Database to Google Cloud Platform</h1>
+        <h1 class="post-title">Setting up and running Docker Swarm on Google Cloud Platform</h1>
         <small></small>
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2018-05-07T21:55:31&#43;08:00">
-            May 7, 2018
+          <time class="post-date" datetime="2018-06-01T21:55:31&#43;08:00">
+            Jun 1, 2018
           </time>
         
          
-          <span class="post-tag small"><a href="https://mydev.org//tags/mysql/">#mysql</a></span>
+          <span class="post-tag small"><a href="https://mydev.org//tags/docker-swarm/">#docker swarm</a></span>
          
           <span class="post-tag small"><a href="https://mydev.org//tags/google-cloud-platform/">#google cloud platform</a></span>
          
-          <span class="post-tag small"><a href="https://mydev.org//tags/mariadb/">#mariadb</a></span>
+          <span class="post-tag small"><a href="https://mydev.org//tags/docker/">#docker</a></span>
          
         </section>
     </header>
 
     <section class="post-content">
-      <p>I have a bunch of blog posts in the unfinished pipeline but I also blog over at the <a href="https://engineering.galleon.ph/">Galleon.PH Engineering Blog</a> and on our internal team blog.</p>
+      <p><img src="/images/docker-swarm-logo.png" alt="Docker Swarm" /></p>
 
-<p><script src="https://asciinema.org/a/st4Hy0ZKEySFLsW9u0iXWOksZ.js" id="asciicast-st4Hy0ZKEySFLsW9u0iXWOksZ" async data-autoplay="true" data-loop="true" data-size="medium" data-rows="20"></script>
+<p>Posted this a month back on the Galleon Engineering blog. This is a guide on how to get Docker Swarm running fully on Google Cloud Platform.
 </p>
 
-<p>We recently performed a migration of our 1TB database over to Google Cloud Platform, both to save on costs and to give us more room to grow. It took about a week to work out the kinks and problems but in the end, we ended up saving about 300GB in space after we cleared out some duplicate indexes and re-imported the database. It really works wonders to start a fresh database import.</p>
+<p>Docker Swarm was the quickest way to convert our local Docker Compose setup into a production cluster rather than have seperate Kubernetes manifests for production. The guide is straight forward but overall it still leaves a lot to be desired compared to Kubernetes.</p>
 
-<p>If you&rsquo;re interested to see how we did it, including with replication, check out the blog post: <a href="https://engineering.galleon.ph/posts/mysql-replication-gcp/">Setting up MySQL / MariaDB replication on Google Cloud Platform</a>.</p>
+<p>Containers in Production are not for the faint of heart.</p>
+
+<p>Check out the blog post: <a href="https://engineering.galleon.ph/posts/docker-swarm-gcp/">Docker Swarm on Google Cloud Platform</a>.</p>
     </section>
 
 
@@ -230,19 +234,19 @@
     
 <section class="share">
   <h4>Share this post</h4>
-  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Migrating%20a%201TB%20Database%20to%20Google%20Cloud%20Platform&nbsp;-&nbsp;MyDev%20-%20Andre%20Marcelo-Tanner&amp;url=https%3a%2f%2fmydev.org%2fpost%2fmysql-migration-gcp%2f"
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Setting%20up%20and%20running%20Docker%20Swarm%20on%20Google%20Cloud%20Platform&nbsp;-&nbsp;MyDev%20-%20Andre%20Marcelo-Tanner&amp;url=https%3a%2f%2fmydev.org%2fpost%2fdocker-swarm-gcp%2f"
       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
       <span class="hidden">Twitter</span>
   </a>
-  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fmydev.org%2fpost%2fmysql-migration-gcp%2f"
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fmydev.org%2fpost%2fdocker-swarm-gcp%2f"
       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
       <span class="hidden">Facebook</span>
   </a>
-  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fmydev.org%2fpost%2fmysql-migration-gcp%2f&amp;description=Migrating%20a%201TB%20Database%20to%20Google%20Cloud%20Platform"
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fmydev.org%2fpost%2fdocker-swarm-gcp%2f&amp;description=Setting%20up%20and%20running%20Docker%20Swarm%20on%20Google%20Cloud%20Platform"
       onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
       <span class="hidden">Pinterest</span>
   </a>
-  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2fmydev.org%2fpost%2fmysql-migration-gcp%2f"
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2fmydev.org%2fpost%2fdocker-swarm-gcp%2f"
      onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
       <span class="hidden">Google+</span>
   </a>
@@ -266,17 +270,10 @@
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="/post/docker-swarm-gcp/">
-          <section class="post">
-              <h2>Setting up and running Docker Swarm on Google Cloud Platform</h2>
-              
-          </section>
-      </a>
   
-  
-      <a class="read-next-story prev" style="no-cover" href="/post/welcome/">
+      <a class="read-next-story prev" style="no-cover" href="/post/mysql-migration-gcp/">
           <section class="post">
-              <h2>Welcome</h2>
+              <h2>Migrating a 1TB Database to Google Cloud Platform</h2>
           </section>
       </a>
   

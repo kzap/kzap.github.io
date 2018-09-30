@@ -6,15 +6,33 @@
     <description>Recent content in Tags on MyDev - Andre Marcelo-Tanner</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 07 May 2018 21:55:31 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 01 Jun 2018 21:55:31 +0800</lastBuildDate>
     
 	<atom:link href="https://mydev.org/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Docker</title>
+      <link>https://mydev.org/tags/docker/</link>
+      <pubDate>Fri, 01 Jun 2018 21:55:31 +0800</pubDate>
+      
+      <guid>https://mydev.org/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docker Swarm</title>
+      <link>https://mydev.org/tags/docker-swarm/</link>
+      <pubDate>Fri, 01 Jun 2018 21:55:31 +0800</pubDate>
+      
+      <guid>https://mydev.org/tags/docker-swarm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Google Cloud Platform</title>
       <link>https://mydev.org/tags/google-cloud-platform/</link>
-      <pubDate>Mon, 07 May 2018 21:55:31 +0800</pubDate>
+      <pubDate>Fri, 01 Jun 2018 21:55:31 +0800</pubDate>
       
       <guid>https://mydev.org/tags/google-cloud-platform/</guid>
       <description></description>

@@ -6,10 +6,22 @@
     <description>Recent content in Posts on MyDev - Andre Marcelo-Tanner</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 07 May 2018 21:55:31 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 01 Jun 2018 21:55:31 +0800</lastBuildDate>
     
 	<atom:link href="https://mydev.org/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Setting up and running Docker Swarm on Google Cloud Platform</title>
+      <link>https://mydev.org/post/docker-swarm-gcp/</link>
+      <pubDate>Fri, 01 Jun 2018 21:55:31 +0800</pubDate>
+      
+      <guid>https://mydev.org/post/docker-swarm-gcp/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://mydev.org/images/docker-swarm-logo.png&#34; alt=&#34;Docker Swarm&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Posted this a month back on the Galleon Engineering blog. This is a guide on how to get Docker Swarm running fully on Google Cloud Platform.
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Migrating a 1TB Database to Google Cloud Platform</title>
@@ -17,8 +29,10 @@
       <pubDate>Mon, 07 May 2018 21:55:31 +0800</pubDate>
       
       <guid>https://mydev.org/post/mysql-migration-gcp/</guid>
-      <description>I have a bunch of blog posts in the unfinished pipeline but I also blog over at the Galleon.PH Engineering Blog and on our internal team blog.
-We recently performed a migration of our 1TB database over to Google Cloud Platform, both to save on costs and to give us more room to grow. It took about a week to work out the kinks and problems but in the end, we ended up saving about 300GB in space after we cleared out some duplicate indexes and re-imported the database.</description>
+      <description>&lt;p&gt;I have a bunch of blog posts in the unfinished pipeline but I also blog over at the &lt;a href=&#34;https://engineering.galleon.ph/&#34;&gt;Galleon.PH Engineering Blog&lt;/a&gt; and on our internal team blog.&lt;/p&gt;
+
+&lt;p&gt;&lt;script src=&#34;https://asciinema.org/a/st4Hy0ZKEySFLsW9u0iXWOksZ.js&#34; id=&#34;asciicast-st4Hy0ZKEySFLsW9u0iXWOksZ&#34; async data-autoplay=&#34;true&#34; data-loop=&#34;true&#34; data-size=&#34;medium&#34; data-rows=&#34;20&#34;&gt;&lt;/script&gt;
+&lt;/p&gt;</description>
     </item>
     
     <item>
