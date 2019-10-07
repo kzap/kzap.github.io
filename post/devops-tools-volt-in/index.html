@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="DevOps Tools in Go: Volt In!"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="DevOps Tools in Go: Volt In! &middot; MyDev - Andre Marcelo-Tanner" />
+  	<meta property="og:site_name" content="MyDev - Andre Marcelo-Tanner" />
+  	<meta property="og:url" content="https://mydev.org/post/devops-tools-volt-in/" />
+
+    
+        
+    
+
+    
+    <meta property="og:description" content="" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2019-10-01T21:55:31&#43;08:00" />
+
+    
+    <meta property="article:tag" content="" />
+    
+    
+
+    <title>DevOps Tools in Go: Volt In! &middot; MyDev - Andre Marcelo-Tanner</title>
+
+    
+    <meta name="description" content="&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;This is the talk I gave at the &lt;a href=&#34;https://www.facebook.com/GoManilaPh&#34;&gt;GoManila Meetup&lt;/a&gt; held on September 23, 2019. You can &lt;a href" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/index.xml" rel="alternate" type="application/rss+xml" title="MyDev - Andre Marcelo-Tanner" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.37.1" />
+
+    <link rel="canonical" href="https://mydev.org/post/devops-tools-volt-in/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": 
+    },
+    "author": {
+        "@type": "Person",
+        "name": ,
+        
+        "url": ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "headline": DevOps Tools in Go: Volt In!,
+    "name": DevOps Tools in Go: Volt In!,
+    "wordCount": 2171,
+    "timeRequired": "PT11M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": en
+    },
+    "url": https://mydev.org/post/devops-tools-volt-in/,
+    "datePublished": 2019-10-01T21:55Z,
+    "dateModified": 2019-10-01T21:55Z,
+    
+    "keywords": ,
+    "description": ,
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": https://mydev.org/post/devops-tools-volt-in/
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+  
+      <a class="menu-button icon-feed" href="/index.xml" >&nbsp;&nbsp;Subscribe</a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">DevOps Tools in Go: Volt In!</h1>
+        <small></small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2019-10-01T21:55:31&#43;08:00">
+            Oct 1, 2019
+          </time>
+        
+         
+          <span class="post-tag small"><a href="https://mydev.org//tags//">#</a></span>
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      <blockquote>
+<p><em>This is the talk I gave at the <a href="https://www.facebook.com/GoManilaPh">GoManila Meetup</a> held on September 23, 2019. You can <a href="https://speakerdeck.com/kzap/devops-tools-volt-in">view the slides here</a> and the <a href="https://www.facebook.com/GoManilaPh/videos/vb.2088213914575783/400002014018577/?type=3&amp;theater">video recording here</a> (starts at the 53-minute mark).</em></p>
+</blockquote>
+
+<p><img src="/images/devops-tools-volt-in/gopher_unicorn.jpg" alt="https://github.com/ashleymcnamara/gophers" /></p>
+
+<p>We used to throw code over the wall, only ensuring it works in our development environment. Production was a dangerous place that specialized people known as Operators/Ops had to set up, manage and keep online. The move of a lot of devices into software as code and the cloud with APIs and abstractions like Docker and Kubernetes has given us a world where the programmer can go from development to production all by themselves. This is what you might call the &ldquo;DevOps&rdquo; movement.</p>
+
+<p></p>
+
+<blockquote>
+<p>&ldquo;DevOps is the combination of cultural philosophies, practices, and tools that increases an organization’s ability to deliver applications and services at high velocity&hellip;&rdquo; - <a href="https://aws.amazon.com/devops/what-is-devops/">Amazon.com</a></p>
+</blockquote>
+
+<p>This statement can be simplified as:</p>
+
+<p><code>&quot;DevOps increases an organization’s ability to deliver&quot;</code></p>
+
+<p>We all want to have the ability to deploy in faster iterations, to test our code quicker, to get the minimum viable product out to the market to beat the competitors, to receive feedback from customers. We want to deliver features of an ever-increasing scope, with large engineering teams making thousands of changes in production daily. Having a DevOps culture is a differentiator in today&rsquo;s market, hopefully, it will be the standard of tomorrow.</p>
+
+<p>Today though the landscape of tools and solutions to enable this culture looks like this:</p>
+
+<p><img src="/images/devops-tools-volt-in/devops-tools-platform-franken-suite-hero-f13d7325-2cc4-4ec6-b74c-208de82cc268.gif" alt="" /></p>
+
+<p>Too many choices and each of these have their subset of tools and extensions. You have to be mindful of the rabbit hole that you descend.</p>
+
+<h1 id="the-problem">The Problem</h1>
+
+<p>The truth is every company has to make its own choice of tools and how to use them. In my experience the larger the organization, the more tools and the more complex the processes are.</p>
+
+<p><img src="/images/devops-tools-volt-in/Screenshot_2019-09-23_13-a07d527c-c264-4be1-ba07-31e70ec8c576.52.50.png" alt="" /></p>
+
+<p>Smaller organizations can make do with ad-hoc tools and have fewer requirements to get to Production. The larger the organization grows, the more controls are put in place and the spread of tools grows. You get strict requirements and processes, especially in certain industries with regulations or if you deal with enterprise customers.</p>
+
+<p>Having every developer learn these workflows and tools and constantly stay up to date with the changes is a challenge in itself. This is why enterprises prefer to purchase a vendor solution or where a product like GitLab is rightly positioned. Image how long it takes 1 person to learn how to use all the above? Unless they work in Infrastructure such knowledge does not directly benefit their day to day.</p>
+
+<p>Some of these problems we experienced were:</p>
+
+<ul>
+<li>Tools are hard to learn and they change as technology and the company changes.</li>
+<li>Standardization is important as the number of engineers grow, especially for starting new projects.</li>
+<li>On-boarding new engineers are costly and the faster you can get them deploying reliably the better.</li>
+<li>Infrastructure code should live right next to application or else you will create silos again.</li>
+<li>Secret management is usually an after thought and hard problem.</li>
+<li>Permissions and controls get put once you reach a certain size or to enable compliance with regulations, this can slow you down if you don&rsquo;t abstract it away.</li>
+<li>Observing the code in Production and knowing if it works a whole different set of skills.</li>
+</ul>
+
+<h1 id="solution">Solution</h1>
+
+<p>A solution is to codify all these tools and processes. Saying it is simpler than doing it but this is what Continuous Integration and Continuous Delivery is all about. You can use your favorite CI tools just use GitLab and get most of the work done in YAML. This is only solving half the problem. Doing complex logic in YAML or Bash is not the best for portability or long-lived code.</p>
+
+<p>You want to be able to create a way so that these processes and tools can be used in any environment whether on local, CI, or Production. This is why we create internal tools, to solve problems in a repeatable way that can scale. For developers the right tool most of the time is a command-line tool and there is no better language for CLI tools than Go!</p>
+
+<p><img src="/images/devops-tools-volt-in/GOPHER_MIC_DROP_WITH_BACKGROUND.png" alt="https://github.com/ashleymcnamara/gophers" /></p>
+
+<h2 id="shippy">Shippy</h2>
+
+<p>At <a href="https://www.ada.support/">Ada</a>, we solved this by creating <strong>Shippy</strong>, a CLI tool created using Go. An all in one tool that greatly enables our developers&rsquo; productivity. It contains very specific workflows for our internal processes and allows us to deploy to Production in one single command:</p>
+
+<p><img src="/images/devops-tools-volt-in/Screenshot_2019-09-23_14-37f52954-adf1-406e-84a4-c5a820b4cc24.21.29.png" alt="" /></p>
+
+<p><img src="/images/devops-tools-volt-in/Screenshot_2019-09-23_14-eb7681b1-7547-4d21-bf14-d7c7f4a89e04.22.34.png" alt="" /></p>
+
+<p>It looks simple, but it removes the overhead and cognitive load from our developers. Now they just have to learn how to use a few commands rather than the plethora of tools out there.</p>
+
+<p>In a few commands we encapsulated:</p>
+
+<ul>
+<li>AWS Elastic Container Registry Login</li>
+<li>Docker Build &amp; Push</li>
+<li>Kubernetes Deployment</li>
+<li>Kontemplate, a YAML templating tool for Kubernetes because.</li>
+<li>Secret management via AWS Key Management Service and EJSON-KMS</li>
+<li>Change management processes like making sure the wrong code can not get deployed and that it has approval.</li>
+</ul>
+
+<p>All of this you might do already manually but abstracting it away takes away so much of the pain of everyday development in a growing company.</p>
+
+<p><br /></p>
+
+<p><img src="/images/devops-tools-volt-in/DockerGopher.png" alt="https://github.com/ashleymcnamara/gophers" /></p>
+
+<h1 id="command-line-tools-in-go">Command Line Tools In Go</h1>
+
+<p>Why did we build this in Go? There are lot of great thing at Go, but the main advantages of using it for command line tools are:</p>
+
+<ul>
+<li>It compiles to Linux, MacOS, and Windows very easily, You hardly have to think about this as a developer.</li>
+<li>The binary is relatively small and runs very fast, no runtime environment is required so you can run this on any system you have as long as you have the binary.</li>
+<li>Many easy to use packages, there is the standard library from Go as well as many great third party packages that do most of the heavy lifting for you allowing you to focus on what is specific to your application.</li>
+<li>Many DevOps and Cloud tools are built in Go or have SDKs available. Since Docker, almost all developer tools are built in Go and thus are very easy to use and extend in your own programs. Other examples of these are Kubernetes and Terraform. There are also SDKs for AWS, Google Cloud and Azure.</li>
+</ul>
+
+<p><img src="/images/devops-tools-volt-in/GOPHER WEBPACK.png" alt="https://github.com/ashleymcnamara/gophers" /></p>
+
+<p><br /></p>
+
+<h2 id="go-modules">Go Modules</h2>
+
+<p>The <a href="https://blog.golang.org/using-go-modules">Go modules</a> are the system by which you can use libraries from other applications. You can use the same modules that Kubernetes uses to make your code just as awesome.</p>
+
+<p>Here are some modules I would recommend when writing CLI programs:</p>
+
+<ul>
+<li><a href="https://github.com/spf13/cobra">Cobra</a> - for your commands and parameters, extremely powerful.</li>
+<li><a href="https://github.com/spf13/viper">Viper</a> - for all your configuration needs like YAML, JSON, read parameters from environment variables and more. Hail Cobra!</li>
+<li><a href="https://github.com/aws/aws-sdk-go">AWS SDK</a> - It&rsquo;s huge but it gives you the power of the AWS API into your application.</li>
+<li><a href="https://docs.docker.com/develop/sdk/">Docker</a> - If you use docker, you can do everything it can by using the docker packages. Alternatively you can swap out another OCI image builder like <a href="https://github.com/GoogleContainerTools/kaniko">Kaniko</a> or <a href="https://github.com/containers/buildah">Buildah</a>.</li>
+</ul>
+
+<p><br /></p>
+
+<p><img src="/images/devops-tools-volt-in/GO_BUILD.png" alt="https://github.com/ashleymcnamara/gophers" /></p>
+
+<h1 id="the-devops-method">The DevOps Method</h1>
+
+<p>Creating a CLI tool is not a simple undertaking, not every process you do should automatically be transformed into a CLI command. There should be a process by which you turn the greatest pain into the simplest abstraction:</p>
+
+<ul>
+<li><p><strong>Do it once</strong> - the first time you take on a process, you will discover the difficulties of how to solve your problem and what tools you would need.</p></li>
+
+<li><p><strong>Do it twice</strong> - the next time you tackle this problem you will be better adapted as you had already gone through the pain of figuring out your solution, you should be able to move faster at solving the problem.</p></li>
+
+<li><p><strong>Document it</strong> - if you need to do anything more than twice you better document your process so that you can act on it in a repeatable manner and so that anyone else in your team can use the same process without your help. Good documentation is the foundation for any great solution.</p></li>
+
+<li><p><strong>Script it</strong> - depending on how complex the problem is, you can convert your documentation into a script to automate away most of the manual toil. Whether this is a bash, ruby or python script, it will allow you to use programming concepts in solving your problem and this way you can find the corner cases of what parts of your process are hard to solve and what are simple to automate. I like to use a lot of pseudocode or real code in my documentation so this part of mostly a copy-paste for me.</p></li>
+
+<li><p><strong>How many people need this solution?</strong> - If only those with domain knowledge will be using this process you may not need another abstraction to improve your process. If it&rsquo;s just you and your team, your documentation and scripts may suffice and get you a long way. Overoptimizing and doing it too early can really make you feel like you making progress but in reality, you are wasting time doing this with little impact.</p></li>
+
+<li><p><strong>Get feedback</strong> - if you will not be the only user of this solution, solicit feedback from the other potential users of what similar problems they are having and share your solution to see how they can use it and even let them use it so you can observe how other people would use your process, tools, and solutions. You might be surprised how everyone does not see things your way.</p></li>
+
+<li><p><strong>Iterate</strong> - on your process, documentation and scripts from the feedback. What can you improve? What can you remove? The best process is no process. Is this really needed?</p></li>
+
+<li><p><strong>Now convert it to a custom tool</strong> - only after all the previous steps should you really put in the effort to create custom tooling in Go or another language. By now you should have identified the pain points of your users in your organization, seen where your process has holes and optimized it to the point where it is ready to be shared with everyone. This is the point where you know how much of an impact your tooling can make and the benefits vs the cost of spending time to develop it will be greater.</p></li>
+
+<li><p><strong>Document, Iterate, Rinse, Repeat</strong> - Now that you have a custom tool, start from the beginning and talk to your users, improve your tool and process and maybe eventually even get rid of it, but at least you know you are solving a problem that matters.</p></li>
+</ul>
+
+<p><br /></p>
+
+<p><img src="/images/devops-tools-volt-in/GOPHER_SHARE.png" alt="https://github.com/ashleymcnamara/gophers" /></p>
+
+<h2 id="learnings">Learnings</h2>
+
+<p>Our internal tool Shippy was created long before I joined Ada but over the years of it being used and iterating on it we have learned some lessons:</p>
+
+<ol>
+<li><strong>Keep it modular</strong> - this is an idiom in Go but when you are hacking on an internal tool you may not put as much polish into it as a production application that your customers see. This can lead to tech debt that makes it harder to upgrade it later on. Have a good base to start your application on and a lot of this can be done by using great 3rd party libraries.</li>
+<li><strong>Read the code of other CLI tools out there</strong> - You can learn a lot by seeing how Docker or Kubernetes structure their commands and internal packages. Go code is so easy to read because it&rsquo;s all formatted the same way so don&rsquo;t be afraid to peek into the source code of the bigger companies out there, you could learn a thing or two from them.</li>
+<li><strong>Expect to swap out the underlying tools and libraries</strong> - What worked for you at 10 people may not work for you at 50, 100, or 1000. Your processes may change even, so with a custom tool you can keep the abstraction layer of commands the same but swap out the code underneath with a totally different implementation when it becomes necessary and no one will know. This is one of the great things about internal tools is if the company changes you can change everything with it, it&rsquo;s not like open source tools where you have to support many different use cases or keep backwards compatibility all the time.</li>
+<li><strong>Make it easy to upgrade</strong> - When was the last time you downloaded the latest version of your browser? Keeping all your users on the latest version of your application can remove a lot of bug reports, and let you iterate and push your code out to all your users as soon as it&rsquo;s done. Get your users used to updating their tools automatically and the version number will be a thing of the past.</li>
+</ol>
+
+<h1 id="what-s-next">What&rsquo;s next?</h1>
+
+<p>Our tool Shippy may be the first, but not the last of or custom internal tools. What we do know is that it empowers and makes our users/developers happy and vastly more productive, and for a programmer like me, you want nothing more than for your code to have great impact.</p>
+
+<p>Do you have a custom tool or script at your organization? What problems do you run into when trying to get more people to adopt it? What other ways have you solved these problems that we might not have thought about? Let me know <a href="https://twitter.com/kzapkzap">@kzapkzap on Twitter</a>.</p>
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+
+
+
+
+
+<section class="author">
+  <h4><a href="https://mydev.org/">Andre Marcelo-Tanner</a></h4>
+  
+  <p>Read <a href="https://mydev.org/">more posts</a> by this author.</p>
+  
+  <div class="author-meta">
+    
+    
+  </div>
+</section>
+
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=DevOps%20Tools%20in%20Go%3a%20Volt%20In%21&nbsp;-&nbsp;MyDev%20-%20Andre%20Marcelo-Tanner&amp;url=https%3a%2f%2fmydev.org%2fpost%2fdevops-tools-volt-in%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fmydev.org%2fpost%2fdevops-tools-volt-in%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fmydev.org%2fpost%2fdevops-tools-volt-in%2f&amp;description=DevOps%20Tools%20in%20Go%3a%20Volt%20In%21"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2fmydev.org%2fpost%2fdevops-tools-volt-in%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/post/jenkins-pipelines/">
+          <section class="post">
+              <h2>Increasing developer productivity with simple Jenkins Pipelines</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">MyDev - Andre Marcelo-Tanner</a> </section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+    
+</body>
+</html>
+
