@@ -62,7 +62,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.37.1" />
+    <meta name="generator" content="Hugo 0.46" />
 
     <link rel="canonical" href="https://mydev.org/post/devops-tools-volt-in/" />
 
@@ -95,7 +95,7 @@
     },
     "headline": DevOps Tools in Go: Volt In!,
     "name": DevOps Tools in Go: Volt In!,
-    "wordCount": 2171,
+    "wordCount": 2176,
     "timeRequired": "PT11M",
     "inLanguage": {
       "@type": "Language",
@@ -208,7 +208,7 @@
 
 <p>Too many choices and each of these have their subset of tools and extensions. You have to be mindful of the rabbit hole that you descend.</p>
 
-<h1 id="the-problem">The Problem</h1>
+<h2 id="the-problem">The Problem</h2>
 
 <p>The truth is every company has to make its own choice of tools and how to use them. In my experience the larger the organization, the more tools and the more complex the processes are.</p>
 
@@ -230,11 +230,13 @@
 <li>Observing the code in Production and knowing if it works a whole different set of skills.</li>
 </ul>
 
-<h1 id="solution">Solution</h1>
+<h2 id="solution">Solution</h2>
 
 <p>A solution is to codify all these tools and processes. Saying it is simpler than doing it but this is what Continuous Integration and Continuous Delivery is all about. You can use your favorite CI tools just use GitLab and get most of the work done in YAML. This is only solving half the problem. Doing complex logic in YAML or Bash is not the best for portability or long-lived code.</p>
 
 <p>You want to be able to create a way so that these processes and tools can be used in any environment whether on local, CI, or Production. This is why we create internal tools, to solve problems in a repeatable way that can scale. For developers the right tool most of the time is a command-line tool and there is no better language for CLI tools than Go!</p>
+
+<p>&nbsp;</p>
 
 <p><img src="/images/devops-tools-volt-in/GOPHER_MIC_DROP_WITH_BACKGROUND.png" alt="https://github.com/ashleymcnamara/gophers" /></p>
 
@@ -251,21 +253,21 @@
 <p>In a few commands we encapsulated:</p>
 
 <ul>
-<li>AWS Elastic Container Registry Login</li>
-<li>Docker Build &amp; Push</li>
-<li>Kubernetes Deployment</li>
-<li>Kontemplate, a YAML templating tool for Kubernetes because.</li>
-<li>Secret management via AWS Key Management Service and EJSON-KMS</li>
+<li><a href="https://aws.amazon.com/ecr/">AWS Elastic Container Registry</a> Login</li>
+<li><a href="https://www.docker.com/">Docker</a> Build &amp; Push</li>
+<li><a href="https://www.docker.com/">Kubernetes</a> Deployment</li>
+<li><a href="https://github.com/tazjin/kontemplate">Kontemplate</a>, a YAML templating tool for Kubernetes because.</li>
+<li>Secret management via <a href="https://aws.amazon.com/kms/">AWS Key Management Service</a> and <a href="https://github.com/adrienkohlbecker/ejson-kms">EJSON-KMS</a></li>
 <li>Change management processes like making sure the wrong code can not get deployed and that it has approval.</li>
 </ul>
 
 <p>All of this you might do already manually but abstracting it away takes away so much of the pain of everyday development in a growing company.</p>
 
-<p><br /></p>
+<p>&nbsp;</p>
 
 <p><img src="/images/devops-tools-volt-in/DockerGopher.png" alt="https://github.com/ashleymcnamara/gophers" /></p>
 
-<h1 id="command-line-tools-in-go">Command Line Tools In Go</h1>
+<h2 id="command-line-tools-in-go">Command Line Tools In Go</h2>
 
 <p>Why did we build this in Go? There are lot of great thing at Go, but the main advantages of using it for command line tools are:</p>
 
@@ -276,9 +278,9 @@
 <li>Many DevOps and Cloud tools are built in Go or have SDKs available. Since Docker, almost all developer tools are built in Go and thus are very easy to use and extend in your own programs. Other examples of these are Kubernetes and Terraform. There are also SDKs for AWS, Google Cloud and Azure.</li>
 </ul>
 
-<p><img src="/images/devops-tools-volt-in/GOPHER WEBPACK.png" alt="https://github.com/ashleymcnamara/gophers" /></p>
+<p>&nbsp;</p>
 
-<p><br /></p>
+<p><img src="/images/devops-tools-volt-in/GOPHER WEBPACK.png" alt="https://github.com/ashleymcnamara/gophers" /></p>
 
 <h2 id="go-modules">Go Modules</h2>
 
@@ -293,11 +295,11 @@
 <li><a href="https://docs.docker.com/develop/sdk/">Docker</a> - If you use docker, you can do everything it can by using the docker packages. Alternatively you can swap out another OCI image builder like <a href="https://github.com/GoogleContainerTools/kaniko">Kaniko</a> or <a href="https://github.com/containers/buildah">Buildah</a>.</li>
 </ul>
 
-<p><br /></p>
+<p>&nbsp;</p>
 
 <p><img src="/images/devops-tools-volt-in/GO_BUILD.png" alt="https://github.com/ashleymcnamara/gophers" /></p>
 
-<h1 id="the-devops-method">The DevOps Method</h1>
+<h2 id="the-devops-method">The DevOps Method</h2>
 
 <p>Creating a CLI tool is not a simple undertaking, not every process you do should automatically be transformed into a CLI command. There should be a process by which you turn the greatest pain into the simplest abstraction:</p>
 
@@ -321,7 +323,7 @@
 <li><p><strong>Document, Iterate, Rinse, Repeat</strong> - Now that you have a custom tool, start from the beginning and talk to your users, improve your tool and process and maybe eventually even get rid of it, but at least you know you are solving a problem that matters.</p></li>
 </ul>
 
-<p><br /></p>
+<p>&nbsp;</p>
 
 <p><img src="/images/devops-tools-volt-in/GOPHER_SHARE.png" alt="https://github.com/ashleymcnamara/gophers" /></p>
 
@@ -336,7 +338,7 @@
 <li><strong>Make it easy to upgrade</strong> - When was the last time you downloaded the latest version of your browser? Keeping all your users on the latest version of your application can remove a lot of bug reports, and let you iterate and push your code out to all your users as soon as it&rsquo;s done. Get your users used to updating their tools automatically and the version number will be a thing of the past.</li>
 </ol>
 
-<h1 id="what-s-next">What&rsquo;s next?</h1>
+<h2 id="what-s-next">What&rsquo;s next?</h2>
 
 <p>Our tool Shippy may be the first, but not the last of or custom internal tools. What we do know is that it empowers and makes our users/developers happy and vastly more productive, and for a programmer like me, you want nothing more than for your code to have great impact.</p>
 
