@@ -6,27 +6,10 @@
     <description>Recent content in Posts on MyDev - Andre Marcelo-Tanner</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 01 Oct 2019 21:55:31 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 01 Aug 2018 21:55:31 +0800</lastBuildDate>
     
 	<atom:link href="https://mydev.org/post/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>DevOps Tools in Go: Volt In!</title>
-      <link>https://mydev.org/post/devops-tools-volt-in/</link>
-      <pubDate>Tue, 01 Oct 2019 21:55:31 +0800</pubDate>
-      
-      <guid>https://mydev.org/post/devops-tools-volt-in/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;This is the talk I gave at the &lt;a href=&#34;https://www.facebook.com/GoManilaPh&#34;&gt;GoManila Meetup&lt;/a&gt; held on September 23, 2019. You can &lt;a href=&#34;https://speakerdeck.com/kzap/devops-tools-volt-in&#34;&gt;view the slides here&lt;/a&gt; and the &lt;a href=&#34;https://www.facebook.com/GoManilaPh/videos/vb.2088213914575783/400002014018577/?type=3&amp;amp;theater&#34;&gt;video recording here&lt;/a&gt; (starts at the 53-minute mark).&lt;/em&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://mydev.org/images/devops-tools-volt-in/gopher_unicorn.jpg&#34; alt=&#34;https://github.com/ashleymcnamara/gophers&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;We used to throw code over the wall, only ensuring it works in our development environment. Production was a dangerous place that specialized people known as Operators/Ops had to set up, manage and keep online. The move of a lot of devices into software as code and the cloud with APIs and abstractions like Docker and Kubernetes has given us a world where the programmer can go from development to production all by themselves. This is what you might call the &amp;ldquo;DevOps&amp;rdquo; movement.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
     
     <item>
       <title>Increasing developer productivity with simple Jenkins Pipelines</title>
