@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://mydev.org/post/datadog-rabbitmq-cluster-checls/</loc>
+    <lastmod>2020-06-06T21:55:31+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mydev.org/post/devops-tools-volt-in/</loc>
     <lastmod>2019-10-01T21:55:31+08:00</lastmod>
   </url>
@@ -28,12 +33,6 @@
   </url>
   
   <url>
-    <loc>https://mydev.org/tags/</loc>
-    <lastmod>2019-10-01T21:55:31+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://mydev.org/tags/blue-ocean/</loc>
     <lastmod>2018-08-01T21:55:31+08:00</lastmod>
     <priority>0</priority>
@@ -51,14 +50,38 @@
   </url>
   
   <url>
+    <loc>https://mydev.org/tags/cluster-agent/</loc>
+    <lastmod>2020-06-06T21:55:31+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mydev.org/tags/datadog/</loc>
+    <lastmod>2020-06-06T21:55:31+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mydev.org/tags/devops/</loc>
+    <lastmod>2020-06-06T21:55:31+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://mydev.org/tags/docker/</loc>
-    <lastmod>2018-06-01T21:55:31+08:00</lastmod>
+    <lastmod>2020-06-06T21:55:31+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://mydev.org/tags/docker-swarm/</loc>
     <lastmod>2018-06-01T21:55:31+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mydev.org/tags/go/</loc>
+    <lastmod>2020-06-06T21:55:31+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -75,6 +98,12 @@
   </url>
   
   <url>
+    <loc>https://mydev.org/tags/kubernetes/</loc>
+    <lastmod>2020-06-06T21:55:31+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://mydev.org/tags/mariadb/</loc>
     <lastmod>2018-05-07T21:55:31+08:00</lastmod>
     <priority>0</priority>
@@ -82,7 +111,7 @@
   
   <url>
     <loc>https://mydev.org/</loc>
-    <lastmod>2019-10-01T21:55:31+08:00</lastmod>
+    <lastmod>2020-06-06T21:55:31+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -94,13 +123,19 @@
   
   <url>
     <loc>https://mydev.org/post/</loc>
-    <lastmod>2019-10-01T21:55:31+08:00</lastmod>
+    <lastmod>2020-06-06T21:55:31+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mydev.org/tags/rabbitmq/</loc>
+    <lastmod>2020-06-06T21:55:31+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://mydev.org/tags/</loc>
-    <lastmod>2019-10-01T21:55:31+08:00</lastmod>
+    <lastmod>2018-08-01T21:55:31+08:00</lastmod>
     <priority>0</priority>
   </url>
   

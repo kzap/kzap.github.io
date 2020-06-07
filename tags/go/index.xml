@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Docker on MyDev - Andre Marcelo-Tanner</title>
-    <link>https://mydev.org/tags/docker/</link>
-    <description>Recent content in Docker on MyDev - Andre Marcelo-Tanner</description>
+    <title>Go on MyDev - Andre Marcelo-Tanner</title>
+    <link>https://mydev.org/tags/go/</link>
+    <description>Recent content in Go on MyDev - Andre Marcelo-Tanner</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 06 Jun 2020 21:55:31 +0800</lastBuildDate>
     
-	<atom:link href="https://mydev.org/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mydev.org/tags/go/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -39,18 +39,6 @@
 &lt;p&gt;We used to throw code over the wall, only ensuring it works in our development environment. Production was a dangerous place that specialized people known as Operators/Ops had to set up, manage and keep online. The move of a lot of devices into software as code and the cloud with APIs and abstractions like Docker and Kubernetes has given us a world where the programmer can go from development to production all by themselves. This is what you might call the &amp;ldquo;DevOps&amp;rdquo; movement.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Setting up and running Docker Swarm on Google Cloud Platform</title>
-      <link>https://mydev.org/post/docker-swarm-gcp/</link>
-      <pubDate>Fri, 01 Jun 2018 21:55:31 +0800</pubDate>
-      
-      <guid>https://mydev.org/post/docker-swarm-gcp/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://mydev.org/images/docker-swarm-logo.png&#34; alt=&#34;Docker Swarm&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Posted this a month back on the Galleon Engineering blog. This is a guide on how to get Docker Swarm running fully on Google Cloud Platform.
-&lt;/p&gt;</description>
     </item>
     
   </channel>

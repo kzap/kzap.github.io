@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:image" content="/images/datadog-rabbitmq-cluster-checks/francis-delapena--kYTZwojDd8-unsplash.jpg"/>
+    
+
+
+
+<meta name="twitter:title" content="DataDog: RabbitMQ Cluster Checks using Cluster Agent"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="DataDog: RabbitMQ Cluster Checks using Cluster Agent &middot; MyDev - Andre Marcelo-Tanner" />
+  	<meta property="og:site_name" content="MyDev - Andre Marcelo-Tanner" />
+  	<meta property="og:url" content="https://mydev.org/post/datadog-rabbitmq-cluster-checls/" />
+
+    
+       <meta property="og:image" content="/images/datadog-rabbitmq-cluster-checks/francis-delapena--kYTZwojDd8-unsplash.jpg"/>
+    
+
+    
+    <meta property="og:description" content="" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2020-06-06T21:55:31&#43;08:00" />
+
+    
+    <meta property="article:tag" content="devops" />
+    
+    <meta property="article:tag" content="go" />
+    
+    <meta property="article:tag" content="docker" />
+    
+    <meta property="article:tag" content="kubernetes" />
+    
+    <meta property="article:tag" content="datadog" />
+    
+    <meta property="article:tag" content="rabbitmq" />
+    
+    <meta property="article:tag" content="cluster-agent" />
+    
+    
+
+    <title>DataDog: RabbitMQ Cluster Checks using Cluster Agent &middot; MyDev - Andre Marcelo-Tanner</title>
+
+    
+    <meta name="description" content="&lt;p&gt;DataDog is a great service for monitoring all your services running on your servers. You typically use it by setting up the &lt;a href=&#34;https://docs.datadoghq.c" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="/index.xml" rel="alternate" type="application/rss+xml" title="MyDev - Andre Marcelo-Tanner" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.46" />
+
+    <link rel="canonical" href="https://mydev.org/post/datadog-rabbitmq-cluster-checls/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": 
+    },
+    "author": {
+        "@type": "Person",
+        "name": ,
+        
+        "url": ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "headline": DataDog: RabbitMQ Cluster Checks using Cluster Agent,
+    "name": DataDog: RabbitMQ Cluster Checks using Cluster Agent,
+    "wordCount": 1213,
+    "timeRequired": "PT6M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": en
+    },
+    "url": https://mydev.org/post/datadog-rabbitmq-cluster-checls/,
+    "datePublished": 2020-06-06T21:55Z,
+    "dateModified": 2020-06-06T21:55Z,
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": https://mydev.org//images/datadog-rabbitmq-cluster-checks/francis-delapena--kYTZwojDd8-unsplash.jpg,
+        "width": 3000,
+        "height": 1445
+    },
+    
+    "keywords": devops, go, docker, kubernetes, datadog, rabbitmq, cluster-agent,
+    "description": ,
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": https://mydev.org/post/datadog-rabbitmq-cluster-checls/
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+  
+  <header class="main-header post-head" style="background-image: url(/images/datadog-rabbitmq-cluster-checks/francis-delapena--kYTZwojDd8-unsplash.jpg)">
+  
+  <nav class="main-nav overlay clearfix">
+
+
+  
+  
+      <a class="menu-button icon-feed" href="/index.xml" >&nbsp;&nbsp;Subscribe</a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">DataDog: RabbitMQ Cluster Checks using Cluster Agent</h1>
+        <small></small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2020-06-06T21:55:31&#43;08:00">
+            Jun 6, 2020
+          </time>
+        
+         
+          <span class="post-tag small"><a href="https://mydev.org//tags/devops/">#devops</a></span>
+         
+          <span class="post-tag small"><a href="https://mydev.org//tags/go/">#go</a></span>
+         
+          <span class="post-tag small"><a href="https://mydev.org//tags/docker/">#docker</a></span>
+         
+          <span class="post-tag small"><a href="https://mydev.org//tags/kubernetes/">#kubernetes</a></span>
+         
+          <span class="post-tag small"><a href="https://mydev.org//tags/datadog/">#datadog</a></span>
+         
+          <span class="post-tag small"><a href="https://mydev.org//tags/rabbitmq/">#rabbitmq</a></span>
+         
+          <span class="post-tag small"><a href="https://mydev.org//tags/cluster-agent/">#cluster-agent</a></span>
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      <p>DataDog is a great service for monitoring all your services running on your servers. You typically use it by setting up the <a href="https://docs.datadoghq.com/agent/">DataDog Agent</a> on all your servers and configuring it with what <a href="https://docs.datadoghq.com/integrations/">applications/integrations</a> you want it to run checks on. What about external services that do not run on your servers like a managed MySQL or RabbitMQ?</p>
+
+<p><img src="/images/datadog-rabbitmq-cluster-checks/francis-delapena--kYTZwojDd8-unsplash.jpg" alt="Photo by Francis Delapena on Unsplash: https://unsplash.com/photos/-kYTZwojDd8" /></p>
+
+<p></p>
+
+<p>Typically you could also configure your agents to check them to in the same manner. If you run a lot of servers, maybe 10-100+, and on Kubernetes you probably want to take advantage of the <a href="https://docs.datadoghq.com/agent/cluster_agent/">DataDog Cluster Agent</a> which does exactly what it&rsquo;s called.</p>
+
+<blockquote>
+<p>See <a href="https://www.datadoghq.com/blog/datadog-cluster-agent/">this blog post</a> for more information on how the Cluster Agent works, but basically it eases the load on your K8s API Server and enables a host of new features like <a href="https://www.datadoghq.com/blog/autoscale-kubernetes-datadog/">External Metrics for Horizontal Pod Autoscalers (HPAs)</a> and Cluster Checks.</p>
+</blockquote>
+
+<p>Our goal here was to monitor our externally hosted RabbitMQ clusters from a <a href="https://docs.datadoghq.com/integrations/rabbitmq/">DataDog RabbitMQ Integration Check</a>, to enable us to have near real time RabbitMQ metrics in order for us to take advantage of the External Metrics for HPAs.</p>
+
+<p>We were previously using our managed provider&rsquo;s push based DataDog integration but this had a <em>2 minute 30 second delay</em> in metrics which made scaling due to RabbitMQ metrics difficult to use.</p>
+
+<p>This post goes specifically into how to setup a <strong>Cluster Check</strong> for a RabbitMQ service including the Terraform code and Kubernetes YAML to automate the process.</p>
+
+<h2 id="setup-the-datadog-cluster-agent">Setup the DataDog Cluster Agent</h2>
+
+<p>We won&rsquo;t go into the entire <a href="https://docs.datadoghq.com/agent/cluster_agent/setup/?tab=secret">setup of the DataDog Cluster Agent on Kubernetes</a>, to say the least it&rsquo;s a bit detailed.</p>
+
+<p>I will recommend you use the <a href="https://github.com/helm/charts/tree/master/stable/datadog">DataDog Helm Chart</a> and save your brain cells for more pressing problems.</p>
+
+<pre><code class="language-bash">helm install --name datadog-monitoring \
+    --set datadog.apiKey=&lt;DATADOG_API_KEY&gt; \
+    --set datadog.appKey=&lt;DATADOG_APP_KEY&gt; \
+    --set clusterAgent.enabled=true \
+    --set clusterAgent.metricsProvider.enabled=true \
+    --set clusterAgent.token=&lt;GENERATE_A_SECRET&gt; \
+    stable/datadog
+</code></pre>
+
+<blockquote>
+<p>For saner configuration, transfer all these configuration into your own Helm <code>datadog-values.yaml</code> file. See the <a href="https://github.com/helm/charts/blob/master/stable/datadog/values.yaml">default values.yaml</a> for what each configuration key is for.</p>
+</blockquote>
+
+<p>The <code>clusterAgent.token</code> value is a secret that is used to communicate between the regular DataDog agents on each host and the Cluster Agent. Be sure to generate this using whatever random string generator you have and treat it like a secret.</p>
+
+<p>Typically the Cluster Agent is setup with the External Metrics Provider server, so we enabled that also in order for us to be able to use external metrics in our HPA (Horizontal Pod Autoscaler) objects.</p>
+
+<h2 id="create-a-datadog-user-for-rabbitmq">Create a DataDog user for RabbitMQ</h2>
+
+<p>In order for DataDog to monitor RabbitMQ and extract its metrics, a <a href="https://docs.datadoghq.com/integrations/rabbitmq/#prepare-rabbitmq">user needs to be created</a> and given permissions in the virtual hosts that you want tracked.</p>
+
+<blockquote>
+<p>RabbitMQ Virtual Hosts are a concept that allow many different services to run on the same host without running into conflicts. Typically a single service will connect to its own virtual host which is not shared with other applications.</p>
+</blockquote>
+
+<p><img src="/images/datadog-rabbitmq-cluster-checks/Screenshot_2020-04-20_18.04.16.png" alt="Add a new user for DataDog in RabbitMQ" /></p>
+
+<p><img src="/images/datadog-rabbitmq-cluster-checks/Screenshot_2020-04-20_18.04.36.png" alt="Set the permissions and policy for that new user" /></p>
+
+<h3 id="using-terraform">Using Terraform:</h3>
+
+<p>User creation is usually done from the standard <a href="https://www.rabbitmq.com/management.html">RabbitMQ Management Plugin</a> but doing this for many clusters can get tedious so we will use Terraform which has a great <a href="https://www.terraform.io/docs/providers/rabbitmq/index.html">RabbitMQ provider</a>.</p>
+
+<pre><code class="language-json"># main.tf
+
+# Configure this provider to connect to your RabbitMQ API Server
+provider &quot;rabbitmq&quot; {
+  # URL of your RabbitMQ Server without the /api path
+  endpoint = &quot;https://your-rabbit-mq-server&quot;
+  # Username / Password of a user that has the 'administrator' tag 
+  # See https://www.rabbitmq.com/management.html#permissions
+  username = &quot;admin&quot;
+  # Don't store passwords in plain text. Use a &quot;aws_kms_secrets&quot; resource etc.
+  # Suggested Article:
+  #  https://www.linode.com/docs/applications/configuration-management/terraform/secrets-management-with-terraform/
+  password = &quot;STORE_THIS_IN_A_SECRET&quot;
+}
+</code></pre>
+
+<p>Now lets create the user and assign it permissions for the virtual hosts we want:</p>
+
+<pre><code class="language-json"># users.tf
+
+# rabbitmq_user.users creates a 'datadog' user with password and tags
+resource &quot;rabbitmq_user&quot; &quot;users&quot; {
+  name     = &quot;datadog&quot;
+  password = &quot;DATADOG_RABBITMQ_PASSWORD&quot;
+  tags     = [&quot;monitoring&quot;]
+}
+
+# rabbitmq_permissions.permissions assigns permissions
+# in a specific Virutal Host for the 'datadog' user
+resource &quot;rabbitmq_permissions&quot; &quot;permissions&quot; {
+  # Make this resource depend on the users resource
+  # so it doesn't get created or deleted before the users
+  depends_on = [
+    rabbitmq_user.users
+  ]
+
+  user  = &quot;datadog&quot;
+  # If using a specific virtual host, set here:
+  vhost = &quot;/&quot;
+  
+  # Permissions required by DataDog
+  # https://docs.datadoghq.com/integrations/rabbitmq/#prepare-rabbitmq
+  permissions {
+    configure = &quot;^aliveness-test$&quot;
+    # terraform doesnt like strings with \. so we have to use Heredoc syntax...
+    write     = &lt;&lt;EOT
+^amq\.default$
+EOT
+    read      = &quot;.*&quot;
+  }
+}
+</code></pre>
+
+<blockquote>
+<p>Usually you would want to encapsulate this into a module and perhaps use the new <a href="https://www.terraform.io/docs/configuration/resources.html#for_each-multiple-resource-instances-defined-by-a-map-or-set-of-strings"><code>for_each</code> syntax</a> to manage multiple users in your RabbitMQ instance.</p>
+</blockquote>
+
+<h2 id="configure-datadog-cluster-check">Configure DataDog Cluster Check</h2>
+
+<p>We must now configure our DataDog Cluster Agent with a Cluster Check for RabbitMQ.</p>
+
+<p>First we actually need to enable Cluster Checks on the agent. Again there is <a href="https://docs.datadoghq.com/agent/cluster_agent/clusterchecks/">a lot of configuration steps</a> to this process if you deploy DataDog in your own unique way.</p>
+
+<p>For this example we are just going to use the Helm Chart values that we have available and put them into our own <code>datadog-values.yaml</code> file:</p>
+
+<pre><code class="language-yaml"># datadog-values.yaml
+clusterAgent:
+  clusterChecks:
+    # setting this true enables all the required Cluster Agent and Agent config
+    enabled: true
+</code></pre>
+
+<p>Now we add in the configuration for our RabbitMQ check:</p>
+
+<pre><code class="language-yaml"># datadog-values.yaml
+clusterAgent:
+  confd:
+    # The DataDog Docker image creates a file /etc/datadog-agent/conf.d/rabbitmq.yaml
+    # which the DataDog Cluster Agent will then use as its source of configuration
+    rabbitmq.yaml: |-
+      # See all available configuration keys:
+      # https://github.com/DataDog/integrations-core/blob/master/rabbitmq/datadog_checks/rabbitmq/data/conf.yaml.example
+	    
+      # Set this to true to indicate this is a cluster check
+      cluster_check: true
+	  	
+      # init_config is required even if its empty
+      init_config:
+		  
+      # Specify the external RabbitMQ instances you want to collect metrics from
+      instances:
+      - rabbitmq_api_url: &quot;https://your-rabbit-mq-server/api/&quot;
+        username: &quot;datadog&quot;
+        password: &quot;DATADOG_RABBITMQ_PASSWORD&quot;
+        # Cluster checks have no host so they will not inherit host tags set by the agent
+        # You can also specify cluster agent wide tags in the DD_CLUSTER_CHECKS_EXTRA_TAGS env var
+        tags:
+        - &quot;env:production&quot;
+</code></pre>
+
+<blockquote>
+<p>You also generally do not want to store secrets in your Helm YAML, consider using a plugin like <a href="https://github.com/zendesk/helm-secrets">Helm Secrets</a> which uses <a href="https://github.com/mozilla/sops">sops</a> under the hood to encrypt values in YAML.</p>
+</blockquote>
+
+<p>Now lets upgrade our DataDog Agent installation with our new cluster check:</p>
+
+<pre><code class="language-yaml">helm upgrade \
+    --name datadog-monitoring \
+    -f ./datadog-values.yaml \
+    stable/datadog
+</code></pre>
+
+<h2 id="view-metrics-in-datadog">View Metrics in DataDog</h2>
+
+<p>If all goes well the DataDog Cluster Agent will choose a DataDog Agent to run the cluster check and you should start seeing RabbitMQ metrics populating into DataDog. You can check this by going into the <a href="https://app.datadoghq.com/metric/explorer">Metrics Explorer</a> in DataDog and searching for metrics starting with <code>rabbitmq.</code></p>
+
+<p><img src="/images/datadog-rabbitmq-cluster-checks/Screenshot_2020-04-20_20.36.48.png" alt="Viewing your newly collected metrics in DataDog" /></p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>You can do this with any external service that you want to monitor directly with DataDog. A lot of integrations for managed services like AWS do not scrape data often (5-15 mins) and your use case may require data that is updated every 30 seconds which Cluster Checks are a good use-case for.</p>
+
+<p>Now you can go and configure your Horizontal Pod Autoscaler with RabbitMQ metrics from DataDog.</p>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+
+<h3 id="check-cluster-agent-status">Check Cluster Agent Status</h3>
+
+<p>You can run the Cluster Agent <code>configcheck</code> command from the command line to see if your check is configured properly.</p>
+
+<p>Find the pod name of your cluster agent and run the following command:</p>
+
+<pre><code class="language-bash">$ kubectl exec datadog-cluster-agent-POD-NAME agent configcheck
+=== rabbitmq cluster check ===
+Configuration provider: file
+Configuration source: file:/etc/datadog-agent/conf.d/rabbitmq.yaml
+Instance ID: rabbitmq:123456789
+password: 
+rabbitmq_api_url: 
+username: 
+</code></pre>
+
+<h3 id="check-logs">Check Logs</h3>
+
+<p>You can also look through the logs to see if there are issues:</p>
+
+<pre><code class="language-bash">$ kubectl logs -f datadog-cluster-agent-POD-NAME
+</code></pre>
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+
+
+
+
+
+<section class="author">
+  <h4><a href="https://mydev.org/">Andre Marcelo-Tanner</a></h4>
+  
+  <p>Read <a href="https://mydev.org/">more posts</a> by this author.</p>
+  
+  <div class="author-meta">
+    
+    
+  </div>
+</section>
+
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=DataDog%3a%20RabbitMQ%20Cluster%20Checks%20using%20Cluster%20Agent&nbsp;-&nbsp;MyDev%20-%20Andre%20Marcelo-Tanner&amp;url=https%3a%2f%2fmydev.org%2fpost%2fdatadog-rabbitmq-cluster-checls%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fmydev.org%2fpost%2fdatadog-rabbitmq-cluster-checls%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fmydev.org%2fpost%2fdatadog-rabbitmq-cluster-checls%2f&amp;description=DataDog%3a%20RabbitMQ%20Cluster%20Checks%20using%20Cluster%20Agent"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2fmydev.org%2fpost%2fdatadog-rabbitmq-cluster-checls%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+  
+      <a class="read-next-story prev" style="background-image: url(/images/devops-tools-volt-in/gopher_unicorn.jpg)" href="/post/devops-tools-volt-in/">
+          <section class="post">
+              <h2>DevOps Tools in Go: Volt In!</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">MyDev - Andre Marcelo-Tanner</a> </section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+    
+</body>
+</html>
+
