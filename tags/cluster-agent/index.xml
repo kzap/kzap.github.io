@@ -13,10 +13,10 @@
     
     <item>
       <title>DataDog: RabbitMQ Cluster Checks using Cluster Agent</title>
-      <link>https://mydev.org/post/datadog-rabbitmq-cluster-checls/</link>
+      <link>https://mydev.org/post/datadog-rabbitmq-cluster-checks/</link>
       <pubDate>Sat, 06 Jun 2020 21:55:31 +0800</pubDate>
       
-      <guid>https://mydev.org/post/datadog-rabbitmq-cluster-checls/</guid>
+      <guid>https://mydev.org/post/datadog-rabbitmq-cluster-checks/</guid>
       <description>&lt;p&gt;DataDog is a great service for monitoring all your services running on your servers. You typically use it by setting up the &lt;a href=&#34;https://docs.datadoghq.com/agent/&#34;&gt;DataDog Agent&lt;/a&gt; on all your servers and configuring it with what &lt;a href=&#34;https://docs.datadoghq.com/integrations/&#34;&gt;applications/integrations&lt;/a&gt; you want it to run checks on. What about external services that do not run on your servers like a managed MySQL or RabbitMQ?&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://mydev.org/images/datadog-rabbitmq-cluster-checks/francis-delapena--kYTZwojDd8-unsplash.jpg&#34; alt=&#34;Photo by Francis Delapena on Unsplash: https://unsplash.com/photos/-kYTZwojDd8&#34; /&gt;&lt;/p&gt;
