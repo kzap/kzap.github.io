@@ -108,7 +108,7 @@
     },
     "headline": DataDog: RabbitMQ Cluster Checks using Cluster Agent,
     "name": DataDog: RabbitMQ Cluster Checks using Cluster Agent,
-    "wordCount": 1220,
+    "wordCount": 1236,
     "timeRequired": "PT6M",
     "inLanguage": {
       "@type": "Language",
@@ -222,6 +222,10 @@
 
 <p></p>
 
+<p>We were previously using our managed provider&rsquo;s push based DataDog integration but this had a <em>2 minute 30 second delay</em> in metrics which made scaling due to RabbitMQ metrics difficult to use.</p>
+
+<p>This post goes specifically into how to setup a <strong>Cluster Check</strong> for a RabbitMQ service including the Terraform code and Kubernetes YAML to automate the process.</p>
+
 <p>Typically you could also configure your agents to check them to in the same manner. If you run a lot of servers, maybe 10-100+, and on Kubernetes you probably want to take advantage of the <a href="https://docs.datadoghq.com/agent/cluster_agent/">DataDog Cluster Agent</a> which does exactly what it&rsquo;s called.</p>
 
 <blockquote>
@@ -230,15 +234,15 @@
 
 <p>Our goal here was to monitor our externally hosted RabbitMQ clusters from a <a href="https://docs.datadoghq.com/integrations/rabbitmq/">DataDog RabbitMQ Integration Check</a>, to enable us to have near real time RabbitMQ metrics in order for us to take advantage of the External Metrics for HPAs.</p>
 
-<p>We were previously using our managed provider&rsquo;s push based DataDog integration but this had a <em>2 minute 30 second delay</em> in metrics which made scaling due to RabbitMQ metrics difficult to use.</p>
-
-<p>This post goes specifically into how to setup a <strong>Cluster Check</strong> for a RabbitMQ service including the Terraform code and Kubernetes YAML to automate the process.</p>
-
 <h2 id="setup-the-datadog-cluster-agent">Setup the DataDog Cluster Agent</h2>
 
 <p>We won&rsquo;t go into the entire <a href="https://docs.datadoghq.com/agent/cluster_agent/setup/?tab=secret">setup of the DataDog Cluster Agent on Kubernetes</a>, to say the least it&rsquo;s a bit detailed.</p>
 
 <p>I will recommend you use the <a href="https://github.com/helm/charts/tree/master/stable/datadog">DataDog Helm Chart</a> and save your brain cells for more pressing problems.</p>
+
+<blockquote>
+<p>A <a href="https://helm.sh/docs/topics/charts/#:~:text=Helm%20uses%20a%20packaging%20format,%2C%20caches%2C%20and%20so%20on.">Helm Chart</a> is package format for Kubernetes manifests/YAML that makes complex applications simpler to install.</p>
+</blockquote>
 
 <pre><code class="language-bash">helm install --name datadog-monitoring \
     --set datadog.apiKey=&lt;DATADOG_API_KEY&gt; \
